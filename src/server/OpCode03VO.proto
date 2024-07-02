@@ -1,0 +1,50 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_outer_classname = "OPCode03Protos";
+option java_package = "dt.socket.model.proto";
+
+message OPCode03 {
+  int64 vehicleCount = 1;
+  int32 bound = 2;
+  int64 time = 3;
+
+  repeated Section sectionList = 4;
+  repeated FixedSection fixedSectionList = 5;
+  repeated Vehicle vehicleList = 6;
+}
+
+message Section {
+  int32 y = 1;
+  int32 totalCount = 2;
+  int32 lane = 3;
+  int32 avgSpeed = 4;
+}
+
+message FixedSection {
+  int32 index = 1;
+  int32 totalCount = 2;
+  int32 avgSpeed = 3;
+}
+
+message Vehicle {
+  int32 id = 1;
+  int32 x = 2;
+  int32 y = 3;
+  int32 lon = 4;
+  int32 lat = 5;
+  int32 azimuth = 6;
+  int32 lane = 7;
+  int32 speed = 8;
+  int32 eventType = 9;
+  int32 vehicleType = 10;
+  int32 virtual = 11;
+}
+
+message Request {
+  int32 startPosition = 1;
+  int32 endPosition = 2;
+  string zoomLevel = 3;
+  string tunnel = 4;
+  string bound = 5;
+}
