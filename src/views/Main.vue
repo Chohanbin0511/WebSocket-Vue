@@ -8,6 +8,14 @@
         <button @click="handleClick(item.routerName)">{{ item.name }}</button>
       </li>
     </ul>
+    <h1>frameTestList</h1>
+    <ul>
+      <li
+        v-for="item in frameTestList"
+        :key="item.name">
+        <button @click="handleClick(item.routerName)">{{ item.name }}</button>
+      </li>
+    </ul>
   </div>
 </template>
 
@@ -22,6 +30,8 @@ const webSocketList = ref([
   { name: 'webSocketProto', routerName: 'webSocketProto' },
   { name: 'webSocketProtoVueUse', routerName: 'webSocketProtoVueUse' }
 ])
+
+const frameTestList = ref([{ name: 'frameTest', routerName: 'frameTest' }])
 
 const router = useRouter()
 

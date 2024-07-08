@@ -37,5 +37,16 @@ export default [
         component: () => import('@/views/webSocket/WebSocketProtoVueUse.vue')
       }
     ]
+  },
+  {
+    path: '/frame',
+    component: DetailLayout,
+    children: [
+      {
+        path: '/frameTest',
+        name: 'frameTest',
+        component: () => import('@/views/frame/FrameTest.vue')
+      }
+    ]
   }
 ]
